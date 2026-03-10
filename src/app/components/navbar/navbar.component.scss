@@ -1,0 +1,88 @@
+/* Modern Header Styles */
+.navbar {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid transparent;
+
+    /* DEFAULT STATE: Modern Glassmorphism */
+    &.default-nav {
+        background: rgba(var(--bs-body-bg-rgb), 0.7);
+        /* Adjusts based on light/dark theme */
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        border-bottom: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+
+        .nav-link {
+            color: var(--bs-body-color);
+            font-weight: 500;
+
+            &:hover {
+                color: var(--bs-danger);
+            }
+        }
+    }
+
+    /* SCROLLED STATE: Bootstrap Primary Gradient */
+    &.scrolled-nav {
+        padding: 0.7rem 0;
+        background: linear-gradient(45deg, var(--bs-danger), #4e085e) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+        // Force text to white on the dark scrolled background
+        .nav-link,
+        .navbar-brand,
+        .bi,
+        .navbar-toggler-icon {
+            color: #ffffff !important;
+            filter: brightness(0) invert(1); // Ensures toggler icon turns white
+        }
+
+        .btn-outline-primary {
+            border-color: #ffffff;
+            color: #ffffff;
+
+            &:hover {
+                background: #ffffff;
+                color: var(--bs-danger);
+            }
+        }
+    }
+}
+
+/* Elegant Brand Animation */
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
+
+    span {
+        color: var(--bs-danger);
+        transition: color 0.3s;
+    }
+}
+
+.scrolled-nav .navbar-brand span {
+    color: #ffca2c !important;
+}
+
+/* Gold accent on scroll */
+
+/* Navbar Link Underline Effect */
+.nav-link {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 5px;
+        left: 50%;
+        background-color: currentColor;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    &:hover::after {
+        width: 70%;
+    }
+}
