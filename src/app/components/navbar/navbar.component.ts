@@ -2,10 +2,12 @@ import { Component, HostListener, inject, signal } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { Constants } from '../../models/constants';
 import { NgClass } from '@angular/common';
+import { ThemeTogglerComponent } from "../theme-toggler/theme-toggler.component";
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass],
+  imports: [RouterLink, RouterLinkActive, NgClass, ThemeTogglerComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })

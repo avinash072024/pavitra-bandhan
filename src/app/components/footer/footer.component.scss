@@ -1,0 +1,61 @@
+footer {
+    /* Using Bootstrap 5.3 theme variables */
+    background-color: var(--bs-tertiary-bg);
+    border-top: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+    transition: background-color 0.4s ease;
+
+    .footer-logo {
+        // font-family: 'Poppins', sans-serif;
+        color: var(--bs-danger);
+
+        span {
+            color: var(--bs-emphasis-color);
+        }
+    }
+
+    .footer-link {
+        color: var(--bs-secondary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        padding: 3px 0;
+
+        &:hover {
+            color: var(--bs-danger);
+            transform: translateX(5px);
+        }
+    }
+
+    .social-icon {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(var(--bs-danger-rgb), 0.1);
+        color: var(--bs-danger);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: var(--bs-danger);
+            color: white;
+            transform: translateY(-3px);
+        }
+    }
+
+    .newsletter-box {
+        background: var(--bs-body-bg);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.copyright-bar {
+    background-color: rgba(0, 0, 0, 0.03);
+
+    [data-bs-theme='dark'] & {
+        background-color: rgba(255, 255, 255, 0.03);
+    }
+}

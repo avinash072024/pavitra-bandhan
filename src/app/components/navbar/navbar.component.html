@@ -10,32 +10,18 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navContent">
-            <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#">Search</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#">Pricing</a></li>
-
-                <li class="nav-item px-lg-3 py-2 py-lg-0">
-                    <!-- <button class="btn btn-sm rounded-pill d-flex align-items-center gap-2"
-                        [ngClass]="isScrolled() ? 'btn-primary' : 'btn-outline-secondary'"
-                        (click)="themeService.toggleTheme()">
-                        <i class="bi" [class.bi-moon-stars-fill]="themeService.theme() === 'light'"
-                            [class.bi-sun-fill]="themeService.theme() === 'dark'"></i>
-                        <span class="d-lg-none">Switch Theme</span>
-                    </button> -->
-                    <button class="btn btn-outline-danger rounded-pill fw-bold shadow" (click)="themeService.toggleTheme()">
-                        <i class="bi" [class.bi-moon-stars-fill]="themeService.theme() === 'light'"
-                            [class.bi-sun-fill]="themeService.theme() === 'dark'"></i>
-                        <span class="d-lg-none">Switch Theme</span>
-                    </button>
-                </li>
-
-                <li class="nav-item">
-                    <button class="btn btn-outline-danger px-4 rounded-pill fw-bold shadow">
-                        Register
-                    </button>
-                </li>
+            <ul class="navbar-nav mx-auto align-items-center">
+                <li class="nav-item"><a class="nav-link px-3" routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-3" routerLink="/search" routerLinkActive="active">Search</a></li>
+                <li class="nav-item"><a class="nav-link px-3" routerLink="/pricing" routerLinkActive="active">Pricing</a></li>
             </ul>
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <app-theme-toggler />
+                <button class="btn px-4 rounded-pill fw-bold shadow"
+                    [ngClass]="isScrolled() ? 'btn-danger' : 'btn-outline-danger'">
+                    Login
+                </button>
+            </div>
         </div>
     </div>
 </nav>

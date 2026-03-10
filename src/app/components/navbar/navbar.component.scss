@@ -1,7 +1,7 @@
 /* Modern Header Styles */
 .navbar {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid transparent;
 
     /* DEFAULT STATE: Modern Glassmorphism */
@@ -51,7 +51,7 @@
 
 /* Elegant Brand Animation */
 .navbar-brand {
-    font-family: 'Poppins', sans-serif;
+    // font-family: 'Poppins', sans-serif;
     letter-spacing: -0.5px;
 
     span {

@@ -1,0 +1,79 @@
+footer {
+    /* Dynamic Background using BS 5.3 variables */
+    background-color: var(--bs-tertiary-bg);
+    border-top: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.08);
+    padding-top: 80px;
+    transition: background-color 0.3s ease;
+
+    .footer-brand {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.75rem;
+        color: var(--bs-danger);
+
+        span {
+            color: var(--bs-emphasis-color);
+        }
+    }
+
+    .footer-heading {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        color: var(--bs-emphasis-color);
+    }
+
+    .footer-link {
+        color: var(--bs-secondary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        margin-bottom: 0.8rem;
+        width: fit-content;
+
+        &:hover {
+            color: var(--bs-danger);
+            transform: translateX(8px);
+        }
+    }
+
+    /* Modern Social Pills */
+    .social-pill {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: rgba(var(--bs-danger-rgb), 0.1);
+        color: var(--bs-danger);
+        transition: all 0.3s ease;
+        margin-right: 10px;
+
+        &:hover {
+            background: var(--bs-danger);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(var(--bs-danger-rgb), 0.3);
+        }
+    }
+
+    /* Newsletter "Glass" Card */
+    .newsletter-card {
+        background: var(--bs-body-bg);
+        border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+}
+
+.bottom-bar {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05);
+
+    [data-bs-theme="dark"] & {
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+}

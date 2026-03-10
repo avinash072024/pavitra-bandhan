@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Constants } from '../../models/constants';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-new-footer',
   imports: [],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  templateUrl: './new-footer.component.html',
+  styleUrl: './new-footer.component.scss'
 })
-export class FooterComponent {
+export class NewFooterComponent {
   currentYear: number = new Date().getFullYear();
   appName: string = Constants.APP_NAME;
   appName1: string = Constants.APP_NAME1;
