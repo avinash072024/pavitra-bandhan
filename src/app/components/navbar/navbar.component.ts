@@ -5,6 +5,12 @@ import { NgClass } from '@angular/common';
 import { ThemeTogglerComponent } from "../theme-toggler/theme-toggler.component";
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+export interface NavLinks {
+  id: number;
+  path: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-navbar',
   imports: [RouterLink, RouterLinkActive, NgClass, ThemeTogglerComponent],
@@ -18,6 +24,8 @@ export class NavbarComponent {
   appName: string = Constants.APP_NAME;
   appName1: string = Constants.APP_NAME1;
   appName2: string = Constants.APP_NAME2;
+
+  navLinks: NavLinks[] = Constants.navLinks;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

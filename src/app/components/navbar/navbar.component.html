@@ -4,24 +4,68 @@
             {{appName1}} <span>{{appName2}}</span>
         </a>
 
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex align-items-center gap-2">
+            <div class="d-lg-none">
+                <app-theme-toggler />
+            </div>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar">
+                <i class="bi bi-grid-fill" [class.text-white]="isScrolled()" [class.text-danger]="!isScrolled()"></i>
+            </button>
+        </div>
 
-        <div class="collapse navbar-collapse" id="navContent">
+        <div class="collapse navbar-collapse d-none d-lg-flex">
             <ul class="navbar-nav mx-auto align-items-center">
-                <li class="nav-item"><a class="nav-link px-3" routerLink="/home" routerLinkActive="active">Home</a></li>
-                <li class="nav-item"><a class="nav-link px-3" routerLink="/search" routerLinkActive="active">Search</a></li>
-                <li class="nav-item"><a class="nav-link px-3" routerLink="/pricing" routerLinkActive="active">Pricing</a></li>
+                @for (item of navLinks; track item.id) {
+                <li class="nav-item">
+                    <a class="nav-link px-3" [routerLink]="item.path"
+                        routerLinkActive="active-link shadow-sm">{{item.label}}</a>
+                </li>
+                }
             </ul>
-            <div class="d-flex justify-content-center align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3">
                 <app-theme-toggler />
                 <button class="btn px-4 rounded-pill fw-bold shadow"
-                    [ngClass]="isScrolled() ? 'btn-danger' : 'btn-outline-danger'">
+                    [ngClass]="isScrolled() ? 'btn-light text-danger' : 'btn-danger'">
                     Login
                 </button>
             </div>
         </div>
     </div>
 </nav>
+
+<div class="offcanvas offcanvas-end border-0 shadow-lg d-lg-none" data-bs-backdrop="static" tabindex="-1"
+    id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+    <div class="offcanvas-header px-4 pt-4">
+        <h5 class="offcanvas-title fw-bold text-danger" id="offcanvasNavbarLabel">
+            {{appName1}} {{appName2}}
+        </h5>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body px-0 d-flex flex-column">
+        <!-- <div class="px-3 mb-4">
+            <small class="text-uppercase text-muted fw-bold ls-1 px-3">Main Menu</small>
+        </div> -->
+
+        <ul class="navbar-nav w-100" style="min-height: 60vh; overflow: auto; scrollbar-width: none;">
+            @for (item of navLinks; track item.id) {
+            <li class="nav-item px-3 mb-3">
+                <a class="nav-link mobile-nav-link d-flex align-items-center px-4 py-2 bg-body-secondary" [routerLink]="item.path"
+                    routerLinkActive="active-mobile-link shadow" data-bs-dismiss="offcanvas">
+                    <i class="bi bi-circle-fill small me-3" style="font-size: 8px;"></i>
+                    {{item.label}}
+                </a>
+            </li>
+            }
+        </ul>
+
+        <div class="mt-auto pt-3 px-4 border-top">
+            <button class="btn btn-danger w-100 py-3 rounded-pill fw-bold shadow-sm mb-3">
+                Login / Register
+            </button>
+            <p class="mb-0 text-center small text-muted">India's Trusted Matrimony</p>
+        </div>
+    </div>
+</div>
