@@ -45,11 +45,21 @@
     </div>
 
     <div class="offcanvas-body px-0 d-flex flex-column">
-        <!-- <div class="px-3 mb-4">
+        <div class="px-3 mb-4">
             <small class="text-uppercase text-muted fw-bold ls-1 px-3">Main Menu</small>
-        </div> -->
+        </div>
 
-        <ul class="navbar-nav w-100" style="min-height: 60vh; overflow: auto; scrollbar-width: none;">
+        <ul class="navbar-nav w-100" style="min-height: 60vh; overflow: auto;">
+            @for (item of navLinks; track item.id) {
+            <li class="nav-item px-3 mb-3">
+                <a class="nav-link mobile-nav-link d-flex align-items-center px-4 py-3 bg-body-secondary" [routerLink]="item.path"
+                    routerLinkActive="active-mobile-link shadow" data-bs-dismiss="offcanvas">
+                    <i class="bi bi-circle-fill small me-3" style="font-size: 8px;"></i>
+                    {{item.label}}
+                </a>
+            </li>
+            }
+
             @for (item of navLinks; track item.id) {
             <li class="nav-item px-3 mb-3">
                 <a class="nav-link mobile-nav-link d-flex align-items-center px-4 py-3 bg-body-secondary" [routerLink]="item.path"
