@@ -1,0 +1,85 @@
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.story-card {
+    background: var(--bs-body-bg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.05) !important;
+
+    .story-img-wrapper {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+
+        .story-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.6));
+        }
+
+        .wedding-date {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    }
+
+    .heart-icon-box {
+        position: absolute;
+        top: -25px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--bs-danger);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(var(--bs-danger-rgb), 0.1) !important;
+
+        .story-img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.share-banner {
+    background: var(--bs-danger-bg-subtle);
+    border: 2px dashed var(--bs-danger);
+    color: var(--bs-emphasis-color);
+}
+
+/* Dark Theme Persistence Overrides */
+[data-bs-theme='dark'] {
+    .story-card {
+        background: var(--bs-tertiary-bg);
+        border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .share-banner {
+        background: rgba(var(--bs-danger-rgb), 0.05);
+    }
+}
+
+.italic-text {
+    font-style: italic;
+    line-height: 1.6;
+}

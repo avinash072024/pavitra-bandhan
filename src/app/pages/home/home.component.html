@@ -139,11 +139,11 @@
             @for (item of successStories; track item.id) {
             <div class="col-md-4" data-aos="zoom-in">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-                    <img [src]="item.img" class="card-img-top" [alt]="item.name">
+                    <img [src]="item.coupleImg" class="card-img-top" [alt]="item.names">
                     <div class="card-body">
-                        <h5 class="fw-bold">{{item.name}}</h5>
-                        <p class="text-muted small">{{item.date}}</p>
-                        <p class="card-text">{{item.text}}</p>
+                        <h5 class="fw-bold">{{item.names}}</h5>
+                        <p class="text-muted small">{{item.weddingDate}}</p>
+                        <p class="card-text">{{item.testimonial}}</p>
                     </div>
                 </div>
             </div>
@@ -152,18 +152,18 @@
 
 
         <div class="row g-4">
-            @for (story of successStories; track story.name; let i = $index) {
+            @for (story of successStories; track story.names; let i = $index) {
             <div class="col-lg-4 col-md-6" data-aos="zoom-in" [attr.data-aos-delay]="i * 300">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 story-card">
                     <div class="img-container">
-                        <img [src]="story.img" class="card-img-top" [alt]="story.name">
+                        <img [src]="story.coupleImg" class="card-img-top" [alt]="story.names">
                     </div>
                     <div class="card-body">
-                        <h5 class="fw-bold mb-1">{{ story.name }}</h5>
-                        <p class="text-danger small fw-semibold">{{ story.date }}</p>
+                        <h5 class="fw-bold mb-1">{{ story.names }}</h5>
+                        <p class="text-danger small fw-semibold">{{ story.weddingDate }}</p>
                         <p class="card-text text-secondary">
                             <i class="bi bi-quote fs-4 opacity-25"></i>
-                            {{ story.text }}
+                            {{ story.testimonial }}
                         </p>
                     </div>
                 </div>

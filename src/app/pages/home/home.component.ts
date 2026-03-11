@@ -3,11 +3,12 @@ import { Constants } from '../../models/constants';
 import { RouterLink } from '@angular/router';
 
 export interface SuccessStory {
-  id: number;
-  name: string;
-  date: string;
-  text: string;
-  img: string;
+  id: string;
+  names: string;
+  location: string;
+  weddingDate: string;
+  coupleImg: string;
+  testimonial: string;
 }
 
 @Component({

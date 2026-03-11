@@ -1,1 +1,51 @@
-<p>success-stories works!</p>
+<div class="container py-5 mt-5">
+    <div class="text-center my-5" data-aos="fade-down">
+        <h6 class="text-danger fw-bold text-uppercase ls-2">Real Connections</h6>
+        <h1 class="display-4 fw-black mb-3">Matches Made in Heaven</h1>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">
+            Over 5,000 couples have found their forever on Pavitra Bandhan.
+            Read their journeys of love and commitment.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        @for (story of stories; track story.id; let i = $index) {
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+            <div class="story-card h-100 overflow-hidden rounded-5 border-0 shadow-sm position-relative">
+                <div class="story-img-wrapper">
+                    <img [src]="story.coupleImg" [alt]="story.names" class="img-fluid story-img">
+                    <div class="img-overlay"></div>
+                    <div class="wedding-date badge rounded-pill bg-white text-dark shadow-sm">
+                        Married: {{story.weddingDate}}
+                    </div>
+                </div>
+
+                <div class="card-body p-4 pt-5 position-relative">
+                    <div class="heart-icon-box shadow">
+                        <i class="bi bi-heart-fill text-white"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-2">{{story.names}}</h4>
+                    <p class="small text-danger fw-semibold mb-3">Met in {{story.location}}</p>
+
+                    <blockquote class="blockquote">
+                        <p class="fs-6 text-secondary italic-text">"{{story.testimonial}}"</p>
+                    </blockquote>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <span class="small text-muted">Success Story #{{story.id}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="mt-5 p-5 rounded-5 share-banner text-center" data-aos="zoom-in">
+        <h2 class="fw-bold mb-3">Did you find your soulmate here?</h2>
+        <p class="mb-4">Share your beautiful journey with us and inspire others.</p>
+        <button class="btn btn-danger px-5 py-3 rounded-pill fw-bold shadow">
+            Submit Your Story
+        </button>
+    </div>
+</div>
