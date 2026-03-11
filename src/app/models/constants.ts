@@ -16,36 +16,6 @@ export class Constants {
 
     // Success Stories
     public static successStories: any = [
-        // {
-        //     name: 'Rahul & Sneha',
-        //     date: 'Matched in Jan 2026',
-        //     text: 'Pavitra Bandhan helped us find exactly what we were looking for. Highly recommended!',
-        //     img: 'https://www.hindustantimes.com/ht-img/img/2025/06/22/400x225/Bengaluru_couple_1750565311542_1750565324209.jpg'
-        // },
-        // {
-        //     name: 'Amit & Priya',
-        //     date: 'Matched in Dec 2025',
-        //     text: 'The verification process made me feel safe. I found my soulmate within two months!',
-        //     img: 'https://media.istockphoto.com/id/1028444298/photo/young-beautiful-couple-on-sofa-stock-image.jpg?s=612x612&w=0&k=20&c=on2Pc0KeJ7X3goTTRYy7cJqT69sHJq1MTVngccdq0w4='
-        // },
-        // {
-        //     name: 'Vikram & Anjali',
-        //     date: 'Matched in Nov 2025',
-        //     text: 'The community filters are amazing. We share the same values and cultural background.',
-        //     img: 'https://previews.123rf.com/images/asphoto777/asphoto7771901/asphoto777190100020/115443773-love-story-of-indian-couple-posed-outdoor.jpg'
-        // },
-        // {
-        //     name: 'Rohan & Meera',
-        //     date: 'Matched in Oct 2025',
-        //     text: 'Simple, elegant, and effective. Thank you Pavitra Bandhan for bringing us together.',
-        //     img: 'https://images.indianexpress.com/2026/03/Karnataka.jpg?w=1200'
-        // },
-        // {
-        //     name: 'Arjun & Kavya',
-        //     date: 'Matched in Sept 2025',
-        //     text: 'A truly modern platform that respects our traditions. Finding love was never this easy.',
-        //     img: 'https://images.pexels.com/photos/1589216/pexels-photo-1589216.jpeg?auto=compress&cs=tinysrgb&w=600'
-        // }
         {
             id: '102',
             names: 'Aniket & Snehal',
@@ -275,4 +245,55 @@ export class Constants {
             bio: 'Education is my calling. I am a quiet soul who loves libraries and historical documentaries. Looking for a calm and intellectual life partner.'
         }
     ]
+
+    public static testimonials: any = [
+        {
+            id: 1,
+            names: 'Rahul & Sneha',
+            location: 'Mumbai',
+            weddingDate: 'Dec 2025',
+            img: 'https://i.pravatar.cc/100?u=1',
+            quote: 'The filters were so precise! I found someone who loves high-altitude trekking just as much as I do. Truly grateful.'
+        },
+        {
+            id: 2,
+            names: 'Amit & Priya',
+            location: 'Delhi',
+            weddingDate: 'Jan 2026',
+            img: 'https://i.pravatar.cc/100?u=2',
+            quote: 'Verification was my main concern. Pavitra Bandhans strict profile checks gave us the confidence to meet and start our journey.'
+        },
+        {
+            id: 3,
+            names: 'Vikram & Aditi',
+            location: 'Bangalore',
+            weddingDate: 'Feb 2026',
+            img: 'https://i.pravatar.cc/100?u=4',
+            quote: 'As busy professionals, we did not have time for endless searching. The AI-matching suggested exactly what we were both looking for.'
+        },
+        {
+            id: 4,
+            names: 'Rohan & Meera',
+            location: 'Pune',
+            weddingDate: 'Nov 2025',
+            img: 'https://i.pravatar.cc/100?u=4',
+            quote: 'I loved how I could control my photo privacy. It felt safe, respectful, and modern. We found each other in just three months!'
+        },
+        {
+            id: 5,
+            names: 'Arjun & Ishani',
+            location: 'Hyderabad',
+            weddingDate: 'Oct 2025',
+            img: 'https://i.pravatar.cc/100?u=5',
+            quote: 'Our families were very involved in the process. This platform bridges the gap between traditional values and modern convenience perfectly.'
+        },
+        {
+            id: 6,
+            names: 'Siddharth & Kavita',
+            location: 'Kolkata',
+            weddingDate: 'Mar 2026',
+            img: 'https://i.pravatar.cc/100?u=6',
+            quote: 'The customer support team helped us at every step. It feels like a community, not just a website. Highly recommended for serious seekers.'
+        }
+    ];
 }
