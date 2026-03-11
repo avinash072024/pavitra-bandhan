@@ -1,0 +1,105 @@
+@if(selectedProfile()){
+<div class="container py-5 mt-5">
+    <div class="row g-4">
+
+        <div class="col-lg-5" data-aos="fade-right">
+            <div class="gallery-wrapper position-sticky" style="top: 100px;">
+                <div class="main-img-container rounded-5 overflow-hidden shadow-lg mb-3">
+                    <img [src]="selectedProfile().img" alt="Main Profile" class="img-fluid main-profile-img">
+                </div>
+                <div class="row g-2">
+                    @for (thumb of [1,2,3,4]; track $index) {
+                    <div class="col-3">
+                        <div class="thumb-container rounded-3 overflow-hidden border cursor-pointer">
+                            <img [src]="selectedProfile().img" [alt]="selectedProfile().name"
+                                class="img-fluid thumb-img">
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+            <div class="profile-content-card p-4 p-md-5 rounded-5 border shadow-sm">
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div>
+                        <h1 class="fw-bold mb-1">{{selectedProfile().name}}, {{selectedProfile().age}}</h1>
+                        <!-- <p class="text-primary fw-semibold mb-0">ID: {{selectedProfile().id}} | Verified Profile <i
+                                class="bi bi-patch-check-fill"></i></p> -->
+                        <p class="text-primary fw-semibold mb-0">ID: {{selectedProfile().id}} |
+                            @if(selectedProfile().isVerified){
+                            Verified Profile <i class="bi bi-patch-check-fill text-primary"></i>
+                            } @else {
+                                Not Verified Profile <i class="bi bi-x-octagon-fill text-danger"></i>
+                            }
+                        </p>
+                    </div>
+                    <button class="btn btn-outline-danger rounded-circle py-2 px-3 shadow-sm border-0">
+                        <i class="bi bi-heart-fill fs-5"></i>
+                    </button>
+                </div>
+
+                <hr class="opacity-10 mb-4">
+
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <button type="button" class="btn btn-danger px-4 py-3 rounded-pill fw-bold flex-grow-1 shadow-sm" [disabled]="!selectedProfile().isVerified">
+                        <i class="bi bi-person-heart me-2"></i>Send Interest
+                    </button>
+                    <button type="button" class="btn btn-success px-4 py-3 rounded-pill fw-bold flex-grow-1 shadow-sm" [disabled]="!selectedProfile().isVerified">
+                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                    </button>
+                    <button type="button" class="btn btn-primary px-4 py-3 rounded-pill fw-bold flex-grow-1 shadow-sm" [disabled]="!selectedProfile().isVerified">
+                        <i class="bi bi-telephone me-2"></i>Call Now
+                    </button>
+                </div>
+
+                <div class="bio-section mb-5">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-person-lines-fill me-2 text-danger"></i>About Me</h5>
+                    <p class="text-secondary lh-lg">
+                        {{selectedProfile().bio}}
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-uppercase small text-muted ls-1 mb-3">Professional Info</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-briefcase me-2"></i> {{selectedProfile().profession}}</li>
+                            <li class="mb-2"><i class="bi bi-mortarboard me-2"></i> M.Tech (IIT Bombay)</li>
+                            <li class="mb-2"><i class="bi bi-currency-rupee me-2"></i> 25 - 30 LPA</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-uppercase small text-muted ls-1 mb-3">Personal Info</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> {{selectedProfile().location}}</li>
+                            <li class="mb-2"><i class="bi bi-translate me-2"></i> Hindi, Marathi, English</li>
+                            <li class="mb-2"><i class="bi bi-clock-history me-2"></i> Never Married</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+} @else {
+<div class="container py-5 mt-5">
+    <div class="row g-4">
+
+        <div class="col-12 mt-5 pt-5" data-aos="fade-right">
+            <h4 class="mb-0 text-center">No profile found.</h4>
+        </div>
+    </div>
+</div>
+}
+
+<!-- <div class="d-lg-none fixed-bottom bg-body border-top p-3 shadow-lg z-3">
+    <div class="d-flex gap-2">
+        <button class="btn btn-danger flex-grow-1 rounded-pill fw-bold py-2">Express Interest</button>
+        <a href="tel:123" class="btn btn-outline-primary rounded-circle p-2"><i class="bi bi-telephone"></i></a>
+        <a href="https://wa.me/123" class="btn btn-outline-success rounded-circle p-2"><i
+                class="bi bi-whatsapp"></i></a>
+    </div>
+</div> -->

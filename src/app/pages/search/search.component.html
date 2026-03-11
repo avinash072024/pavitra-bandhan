@@ -1,0 +1,125 @@
+<div class="container py-5 mt-5">
+    <div class="row g-4">
+
+        <aside class="col-lg-3">
+            <div class="sticky-sidebar">
+                <div class="filter-card p-4 rounded-4 shadow-sm border">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold mb-0">Advanced Filters</h5>
+                        <button class="btn btn-link btn-sm text-danger text-decoration-none p-0">Clear All</button>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-uppercase ls-1">Caste / Community</label>
+                        <select class="form-select border-0 bg-secondary-subtle rounded-3 shadow-none">
+                            <option selected>Any Caste</option>
+                            <option>Brahmin</option>
+                            <option>Maratha</option>
+                            <option>Kshatriya</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-uppercase ls-1">Education Level</label>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="edu1">
+                            <label class="form-check-label small" for="edu1">Masters / PG</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="edu2" checked>
+                            <label class="form-check-label small" for="edu2">Bachelors / UG</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="edu3">
+                            <label class="form-check-label small" for="edu3">Doctorate</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-uppercase ls-1">Location</label>
+                        <div class="input-group bg-secondary-subtle rounded-3 overflow-hidden">
+                            <span class="input-group-text bg-transparent border-0 pe-0">
+                                <i class="bi bi-geo-alt text-danger"></i>
+                            </span>
+                            <input type="text" class="form-control border-0 bg-transparent shadow-none"
+                                placeholder="Search City...">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-uppercase ls-1">Profession</label>
+                        <select class="form-select border-0 bg-secondary-subtle rounded-3 shadow-none">
+                            <option selected>All Professions</option>
+                            <option>Software Engineer</option>
+                            <option>Doctor / Medical</option>
+                            <option>Business / Self-Employed</option>
+                            <option>Government / PSU</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-danger w-100 rounded-pill py-2 fw-bold shadow-sm mt-2">
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="col-lg-9">
+            @if (allProfiles.length) {
+            <div class="d-flex justify-content-between flex-column flex-md-row align-items-start align-items-md-center mb-4"
+                data-aos="fade-down">
+                <h4 class="fw-bold mb-0">Matches for you <span class="text-muted fs-6 fw-normal">(1,240 results)</span>
+                </h4>
+                <br>
+                <select name="" id="" class="form-select px-3 w-25 rounded-pill">
+                    <option value="" selected disabled>Sort by:</option>
+                    <option value="Newest First">Newest First</option>
+                    <option value="Most Relevant">Most Relevant</option>
+                    <option value="Distance">Distance</option>
+                </select>
+            </div>
+            }
+
+            <div class="row g-4">
+                @if (!allProfiles.length) {
+                <div class="col-12 text-center">
+                    <h3 class="my-5 py-5">No profile matched.</h3>
+                </div>
+                }
+                @for (item of allProfiles; track item.id; let i = $index) {
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+                    <div class="profile-card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+                        @if (item.isPremium) {
+                        <span
+                            class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 rounded-pill fw-bold small shadow-sm">
+                            <i class="bi bi-star-fill me-1"></i>Premium
+                        </span>
+                        }
+
+                        <div class="profile-img-box">
+                            <img [src]="item.img" [alt]="item.name" class="img-fluid">
+                        </div>
+
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-1">{{item.name}}, {{item.age}}</h5>
+                            <p class="small text-secondary mb-3">
+                                <i class="bi bi-briefcase me-1"></i> {{item.profession}} | <i
+                                    class="bi bi-geo-alt me-1"></i> {{item.location}}
+                            </p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-danger flex-grow-1 rounded-pill btn-sm fw-bold"
+                                    (click)="viewProfile(item)">View</button>
+                                <button class="btn btn-danger flex-grow-1 rounded-pill btn-sm fw-bold">Connect</button>
+                                <button class="btn btn-outline-danger rounded-circle btn-sm shadow-sm">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </main>
+    </div>
+</div>
