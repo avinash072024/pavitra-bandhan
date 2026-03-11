@@ -52,7 +52,7 @@
         <ul class="navbar-nav w-100" style="min-height: 60vh; overflow: auto; scrollbar-width: none;">
             @for (item of navLinks; track item.id) {
             <li class="nav-item px-3 mb-3">
-                <a class="nav-link mobile-nav-link d-flex align-items-center px-4 py-2 bg-body-secondary" [routerLink]="item.path"
+                <a class="nav-link mobile-nav-link d-flex align-items-center px-4 py-3 bg-body-secondary" [routerLink]="item.path"
                     routerLinkActive="active-mobile-link shadow" data-bs-dismiss="offcanvas">
                     <i class="bi bi-circle-fill small me-3" style="font-size: 8px;"></i>
                     {{item.label}}
