@@ -1,0 +1,61 @@
+.fw-black {
+    font-weight: 900;
+}
+
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.contact-method {
+    background: var(--bs-body-bg);
+    transition: all 0.3s ease;
+    border-color: rgba(var(--bs-emphasis-color-rgb), 0.08) !important;
+
+    &:hover {
+        transform: translateX(10px);
+        border-color: var(--bs-danger) !important;
+    }
+}
+
+.contact-form-card {
+    border-color: rgba(var(--bs-emphasis-color-rgb), 0.05) !important;
+}
+
+/* Floating Label Overrides for Dark Mode */
+.form-control,
+.form-select {
+    background-color: var(--bs-body-bg);
+    border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.1);
+
+    &:focus {
+        border-color: var(--bs-danger);
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.1);
+    }
+}
+
+/* Theme Adaptation */
+[data-bs-theme='dark'] {
+
+    .contact-form-card,
+    .contact-method {
+        background-color: var(--bs-tertiary-bg);
+    }
+
+    .trust-box {
+        background-color: rgba(var(--bs-danger-rgb), 0.1);
+
+        p {
+            color: #f8d7da !important;
+        }
+    }
+}

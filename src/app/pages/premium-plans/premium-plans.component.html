@@ -1,1 +1,54 @@
-<p>premium-plans works!</p>
+<div class="container py-5 mt-5">
+    <div class="text-center my-5" data-aos="fade-down">
+        <h6 class="text-danger fw-bold text-uppercase ls-2">Membership Plans</h6>
+        <h1 class="display-4 fw-black">Invest in Your <span class="text-gradient">Forever</span></h1>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">
+            Choose a plan that fits your journey. All premium plans include verified badges and priority support.
+        </p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+        @for (plan of plans; track plan.name) {
+        <div class="col-lg-4" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="$index * 100">
+            <div class="pricing-card p-5 rounded-5 border shadow-sm position-relative" [class.featured]="plan.featured">
+
+                @if (plan.featured) {
+                <span class="badge-featured">Most Popular</span>
+                }
+
+                <div class="text-center mb-4">
+                    <div class="plan-icon mb-3 mx-auto shadow-sm" [style.background]="plan.color">
+                        <i class="bi" [class]="plan.icon"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1">{{plan.name}}</h3>
+                    <div class="price-box my-4">
+                        <span class="currency">₹</span>
+                        <span class="amount fw-black">{{plan.price}}</span>
+                        <span class="duration text-muted">/ {{plan.duration}}</span>
+                    </div>
+                </div>
+
+                <ul class="list-unstyled mb-5">
+                    @for (feature of plan.features; track feature) {
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span class="small">{{feature}}</span>
+                    </li>
+                    }
+                    @for (locked of plan.lockedFeatures; track locked) {
+                    <li class="mb-3 d-flex align-items-center opacity-50">
+                        <i class="bi bi-x-circle-fill text-muted me-2"></i>
+                        <span class="small text-decoration-line-through">{{locked}}</span>
+                    </li>
+                    }
+                </ul>
+
+                <button class="btn w-100 py-3 rounded-pill fw-bold shadow-sm" [class.btn-danger]="plan.featured"
+                    [class.btn-outline-danger]="!plan.featured">
+                    Choose {{plan.name}}
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+</div>

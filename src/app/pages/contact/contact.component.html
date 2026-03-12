@@ -1,1 +1,92 @@
-<p>contact works!</p>
+<div class="container py-5 mt-5">
+    <div class="text-center my-5" data-aos="fade-down">
+        <h6 class="text-danger fw-bold text-uppercase ls-2">Get In Touch</h6>
+        <h1 class="display-4 fw-black">We’re Here to <span class="text-danger">Support Your Journey</span></h1>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">
+            Whether you need help with profile verification or have questions about premium plans, our team is ready to
+            assist you.
+        </p>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+            <div class="contact-info-wrapper h-100">
+                <h4 class="fw-bold mb-4">Contact Information</h4>
+
+                <div class="contact-method p-4 rounded-4 border mb-3 shadow-sm d-flex align-items-center">
+                    <div class="icon-circle bg-danger-subtle text-danger me-3">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div>
+                        <p class="small text-muted mb-2">Call Us</p>
+                        <h6 class="fw-bold mb-0">+91 98765 43210</h6>
+                    </div>
+                </div>
+
+                <div class="contact-method p-4 rounded-4 border mb-3 shadow-sm d-flex align-items-center">
+                    <div class="icon-circle bg-primary-subtle text-primary me-3">
+                        <i class="bi bi-envelope-at-fill"></i>
+                    </div>
+                    <div>
+                        <p class="small text-muted mb-2">Email Support</p>
+                        <h6 class="fw-bold mb-0">help&#64;pavitrabandhan.com</h6>
+                    </div>
+                </div>
+
+                <div class="trust-box mt-5 p-4 rounded-5 bg-danger-subtle border border-danger border-opacity-25">
+                    <h5 class="fw-bold text-danger mb-3"><i class="bi bi-shield-lock-fill me-2"></i>Your Privacy Matters
+                    </h5>
+                    <p class="small text-dark-emphasis mb-0">
+                        We never share your personal contact details without your explicit permission. Our support team
+                        is trained to handle sensitive matrimonial inquiries with 100% confidentiality.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+            <div class="contact-form-card p-5 rounded-5 border shadow-sm bg-body">
+                <h4 class="fw-bold mb-4">Send us a Message</h4>
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-3" id="name" placeholder="Name">
+                                <label for="name">Full Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control rounded-3" id="email" placeholder="Email">
+                                <label for="email">Email Address</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <select class="form-select rounded-3" id="subject">
+                                    <option selected>Profile Verification</option>
+                                    <option value="1">Premium Plans</option>
+                                    <option value="2">Technical Issue</option>
+                                    <option value="3">Reporting a Profile</option>
+                                </select>
+                                <label for="subject">How can we help?</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control rounded-3" id="message" style="height: 150px"
+                                    placeholder="Message"></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-danger w-100 py-3 rounded-pill fw-bold shadow-sm">
+                                Send Message <i class="bi bi-send-fill ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
