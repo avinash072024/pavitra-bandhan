@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top" [ngClass]="isScrolled() ? 'scrolled-nav' : 'default-nav'">
     <div class="container">
-        <a class="navbar-brand fw-bold fs-3" href="#">
-            {{appName1}} <span>{{appName2}}</span>
+        <a class="navbar-brand fw-bold fs-3" routerLink="/">
+            <i class="bi me-2" [ngClass]="isScrolled() ? 'bi-suit-heart-fill': 'bi-suit-heart'"></i>{{appName1}} <span [ngClass]="isScrolled() ? '': 'text-danger'">{{appName2}}</span>
         </a>
 
         <div class="d-flex align-items-center gap-2">
@@ -38,9 +38,9 @@
     id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
     <div class="offcanvas-header px-4 pt-4">
-        <h5 class="offcanvas-title fw-bold text-danger" id="offcanvasNavbarLabel">
-            {{appName1}} {{appName2}}
-        </h5>
+        <a routerLink="/" class="offcanvas-title fw-bold text-danger fs-5 text-decoration-none" id="offcanvasNavbarLabel" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="bi bi-suit-heart-fill"></i> {{appName1}} {{appName2}}
+        </a>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 

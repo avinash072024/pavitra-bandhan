@@ -1,15 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Constants } from '../../models/constants';
 import { RouterLink } from '@angular/router';
-
-export interface SuccessStory {
-  id: string;
-  names: string;
-  location: string;
-  weddingDate: string;
-  coupleImg: string;
-  testimonial: string;
-}
+import { SuccessStory } from '../../interfaces/success-story';
 
 @Component({
   selector: 'app-home',

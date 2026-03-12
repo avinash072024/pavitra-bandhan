@@ -1,1 +1,132 @@
-<p>dashboard works!</p>
+<div class="container py-5 mt-5">
+    <div class="row align-items-center mb-5" data-aos="fade-down">
+        <div class="col-md-8">
+            <h1 class="fw-black display-5 mb-1">Namaste, Rajesh!</h1>
+            <p class="text-secondary lead">Here's what's happening with your profile today.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <div class="profile-completion-box p-3 rounded-4 border bg-body-tertiary shadow-sm">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="small fw-bold">Profile Strength</span>
+                    <span class="small text-danger fw-bold">85%</span>
+                </div>
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-6 col-lg-3">
+            <div class="stat-card p-4 rounded-5 border shadow-sm h-100 text-center">
+                <div class="icon-circle bg-primary-subtle text-primary mx-auto mb-3">
+                    <i class="bi bi-eye-fill fs-4"></i>
+                </div>
+                <h2 class="fw-bold mb-0">124</h2>
+                <p class="small text-muted mb-0">Profile Views</p>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="stat-card p-4 rounded-5 border shadow-sm h-100 text-center">
+                <div class="icon-circle bg-danger-subtle text-danger mx-auto mb-3">
+                    <i class="bi bi-heart-fill fs-4"></i>
+                </div>
+                <h2 class="fw-bold mb-0">45</h2>
+                <p class="small text-muted mb-0">Interests</p>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="stat-card p-4 rounded-5 border shadow-sm h-100 text-center">
+                <div class="icon-circle bg-success-subtle text-success mx-auto mb-3">
+                    <i class="bi bi-chat-dots-fill fs-4"></i>
+                </div>
+                <h2 class="fw-bold mb-0">12</h2>
+                <p class="small text-muted mb-0">New Messages</p>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="stat-card p-4 rounded-5 border shadow-sm h-100 text-center">
+                <div class="icon-circle bg-warning-subtle text-warning mx-auto mb-3">
+                    <i class="bi bi-star-fill fs-4"></i>
+                </div>
+                <h2 class="fw-bold mb-0">08</h2>
+                <p class="small text-muted mb-0">Shortlisted</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+
+            <div class="section-header d-flex justify-content-between align-items-center mb-4">
+                <h4 class="fw-bold mb-0">Personalized Matches</h4>
+                <a routerLink="/dashboard" class="text-danger fw-bold text-decoration-none small">View All</a>
+            </div>
+
+            <div class="row g-3 mb-5">
+                @for (profile of matches; track profile.id) {
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="match-card p-3 rounded-5 border bg-body shadow-sm d-flex align-items-center">
+                        <img [src]="profile.img" class="rounded-4 me-3 object-fit-cover" width="80" height="80">
+                        <div class="flex-grow-1">
+                            <h6 class="fw-bold mb-1">{{profile.name}}</h6>
+                            <p class="small text-muted mb-2">{{profile.age}} yrs • {{profile.profession}}</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-danger rounded-pill px-3">Connect</button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-circle"><i
+                                        class="bi bi-star"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <h4 class="fw-bold mb-4">Your Shortlist</h4>
+            <div class="row g-3">
+                @for (profile of shortlisted; track profile.id; let i = $index) {
+                <div class="col-12 col-md-6" data-aos="fade-up" [attr.data-aos-delay]="i * 300">
+                    <div
+                        class="list-item-card p-3 rounded-4 border bg-body-tertiary d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img [src]="profile.img" class="rounded-circle me-3 border" width="50" height="50">
+                            <div>
+                                <h6 class="fw-bold mb-0">{{profile.name}}</h6>
+                                <span class="small text-muted">{{profile.location}}</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-link text-danger p-0"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="visitor-sidebar p-4 rounded-5 border bg-body shadow-sm">
+                <h5 class="fw-bold mb-4">Recent Visitors</h5>
+                <div class="visitor-list">
+                    @for (visitor of visitors; track visitor.id) {
+                    <div class="visitor-item d-flex align-items-center mb-3 pb-3 border-bottom border-opacity-10">
+                        <div class="position-relative">
+                            <img [src]="visitor.img" class="rounded-circle me-3" width="55" height="55">
+                            @if (visitor.online) {
+                            <span
+                                class="position-absolute bottom-0 start-50 translate-middle p-1 bg-success border border-light rounded-circle"></span>
+                            }
+                        </div>
+                        <div>
+                            <h6 class="small fw-bold mb-0">{{visitor.name}}</h6>
+                            <p class="x-small text-muted mb-0">Visited {{visitor.time}}</p>
+                            <button class="btn btn-link btn-sm p-0 text-primary text-decoration-none x-small">View
+                                Profile</button>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <button class="btn btn-outline-danger w-100 rounded-pill mt-3 fw-bold">Go Premium to see all</button>
+            </div>
+        </div>
+    </div>
+</div>

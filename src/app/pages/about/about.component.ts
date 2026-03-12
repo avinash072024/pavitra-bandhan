@@ -1,14 +1,6 @@
 import { Component } from '@angular/core';
 import { Constants } from '../../models/constants';
-
-export interface Testimonial {
-  id: number;
-  names: string;
-  location: string;
-  weddingDate: string;
-  img: string;
-  quote: string;
-}
+import { Testimonial } from '../../interfaces/testimonial';
 
 @Component({
   selector: 'app-about',

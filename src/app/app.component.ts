@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
     AOS.init({
       duration: 800,
-      once: true,
+      // once: true,
       mirror: false
     });
   }

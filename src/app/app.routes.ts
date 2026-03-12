@@ -37,7 +37,7 @@ export const routes: Routes = [
         title: `${Constants.APP_NAME} | Contact Us`
     },
     {
-        path: 'search',
+        path: 'profiles',
         component: SearchComponent,
         title: `${Constants.APP_NAME} | Search`
     },

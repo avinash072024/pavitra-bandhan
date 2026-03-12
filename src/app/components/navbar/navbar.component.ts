@@ -4,12 +4,7 @@ import { Constants } from '../../models/constants';
 import { NgClass } from '@angular/common';
 import { ThemeTogglerComponent } from "../theme-toggler/theme-toggler.component";
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
-export interface NavLinks {
-  id: number;
-  path: string;
-  label: string;
-}
+import { NavLinks } from '../../interfaces/nav-links';
 
 @Component({
   selector: 'app-navbar',

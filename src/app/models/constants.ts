@@ -6,9 +6,9 @@ export class Constants {
 
     // nav links
     public static navLinks: any = [
-        { id: 1, path: '/home', label: 'Home' },
+        // { id: 1, path: '/home', label: 'Home' },
         { id: 2, path: '/dashboard', label: 'Dashboard' },
-        { id: 3, path: '/search', label: 'Search' },
+        { id: 3, path: '/profiles', label: 'Profiles' },
         { id: 4, path: '/premium-plans', label: 'Pricing' },
         { id: 5, path: '/about', label: 'About' },
         { id: 6, path: '/contact', label: 'Contact' }
